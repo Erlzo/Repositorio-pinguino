@@ -1,5 +1,5 @@
 package CONTROLADOR;
 
-public class PRUEBA {
+public class Objetos {
 
 }
