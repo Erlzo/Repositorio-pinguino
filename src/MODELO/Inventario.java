@@ -8,7 +8,7 @@ public class Inventario {
 	int dadoLentos;
 	int peces;
 	int bolasNieve;
-	
+
 	public Inventario(int dadoRapido, int dadoLentos, int peces, int bolasNieve) {
 		this.dadoRapido = dadoRapido;
 		this.dadoLentos = dadoLentos;

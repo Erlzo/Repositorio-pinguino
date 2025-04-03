@@ -1,97 +1,91 @@
 package CONTROLADOR;
 
 import java.util.Random;
+import MODELO.Inventario;
 
 public class Eventos {
 	// Obt = obtener
-	static Random random = new Random();
+	public static Random random = new Random();
+	public Inventario inventario; // Acceso al inventario
 
-	String Obtpez;
-	String Obtbolanieve; // entre 1-3
-	String Obtdadorapido;
-	int turno;
-	int perderObjdelInventario;
-	int MotodeNieve;
-
-	public Eventos(String Obtpez, String Obtbolanieve, String Obtdadorapido, int turno, int perderObjdelInventario,
-			int MotodeNieve) {
-		this.Obtpez = Obtpez;
-		this.Obtbolanieve = Obtbolanieve;
-		this.Obtdadorapido = Obtdadorapido;
-		this.turno = turno;
-		this.perderObjdelInventario = perderObjdelInventario;
-		this.MotodeNieve = MotodeNieve;
+	public Eventos(Inventario inventario) {
+		this.inventario = inventario; // Inicializamos el inventario al recibirlo por constructor
 	}
 
-	// Getters
-	public String getObtpez() {
-		return Obtpez;
+	int obtPez;
+	int obtBolaNieve; // entre 1-3
+	int obtDadoRapido;
+	int obtDadoLento;
+
+	public Eventos(int obtPez, int obtBolaNieve, int obtDadoRapido, int obtDadoLento) {
+		this.obtPez = obtPez;
+		this.obtBolaNieve = obtBolaNieve;
+		this.obtDadoRapido = obtDadoRapido;
+		this.obtDadoLento = obtDadoLento;
 	}
 
-	public String getObtbolanieve() {
-		return Obtbolanieve;
+	public int getObtPez() {
+		return obtPez;
 	}
 
-	public String getObtdadorapido() {
-		return Obtdadorapido;
+	public void setObtPez(int obtPez) {
+		this.obtPez = obtPez;
 	}
 
-	public int getTurno() {
-		return turno;
+	public int getObtBolaNieve() {
+		return obtBolaNieve;
 	}
 
-	public int getPerderObjdelInventario() {
-		return perderObjdelInventario;
+	public void setObtBolaNieve(int obtBolaNieve) {
+		this.obtBolaNieve = obtBolaNieve;
 	}
 
-	public int getMotodeNieve() {
-		return MotodeNieve;
+	public int getObtDadoRapido() {
+		return obtDadoRapido;
 	}
 
-	// Setters
-	public void setObtpez(String Obtpez) {
-		this.Obtpez = Obtpez;
+	public void setObtDadoRapido(int obtDadoRapido) {
+		this.obtDadoRapido = obtDadoRapido;
 	}
 
-	public void setObtbolanieve(String Obtbolanieve) {
-		this.Obtbolanieve = Obtbolanieve;
+	public int getObtDadoLento() {
+		return obtDadoLento;
 	}
 
-	public void setObtdadorapido(String Obtdadorapido) {
-		this.Obtdadorapido = Obtdadorapido;
+	public void setObtDadoLento(int obtDadoLento) {
+		this.obtDadoLento = obtDadoLento;
 	}
 
-	public void setTurno(int turno) {
-		this.turno = turno;
-	}
-
-	public void setPerderObjdelInventario(int perderObjdelInventario) {
-		this.perderObjdelInventario = perderObjdelInventario;
-	}
-
-	public void setMotodeNieve(int MotodeNieve) {
-		this.MotodeNieve = MotodeNieve;
-	}
-
-	public static void eventoAleatorio() {
+	public void obtenerEventoAleatorio() {
 
 		int evento = random.nextInt(4);
 
 		switch (evento) {
 		case 0:
-			return ObtenerPescado();
+			System.out.println("Has conseguido 1 pez ");
+			inventario.setPeces(inventario.getPeces() + 1);
 			break;
 		case 1:
-			return obtenerBolaNieve();
+
+			int bolas = random.nextInt(3) + 1;
+
+			if (bolas == 1) {
+				System.out.println("Has conseguido " + bolas + " bola de nieve");
+			} else {
+				System.out.println("Has conseguido " + bolas + " bolas de nieve");
+			}
+
+			inventario.setBolasNieve(inventario.getBolasNieve() + bolas);
 			break;
 		case 2:
-            int casillasRapido = new Random().nextInt(6) + 5; 
-            System.out.println("Has conseguido el dado rapido --> " + casillasRapido + " casillas ");
+			System.out.println("Has conseguido 1 dado rapido ");
+			inventario.setDadoRapido(inventario.getDadoRapido() + 1);
 			break;
 		case 3:
-	        int casillasLento = new Random().nextInt(3) + 1; 
-	        System.out.println("Has conseguido el dado lento --> " + casillasLento);
+			System.out.println("Has conseguido 1 dado lento  ");
+			inventario.setDadoLentos(inventario.getDadoLentos() + 1);
 			break;
 		}
 	}
+
 }
