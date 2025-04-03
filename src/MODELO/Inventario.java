@@ -16,19 +16,19 @@ public class Inventario {
 		this.bolasNieve = bolasNieve;
 	}
 
-	public int getdadoRapido() {
+	public int getDadoRapido() {
 		return dadoRapido;
 	}
 
-	public void setdadoLentos(int dadoLentos) {
+	public void setDadoLentos(int dadoLentos) {
 		this.dadoLentos = dadoLentos;
 	}
 
-	public int getdadoLentos() {
+	public int getDadoLentos() {
 		return dadoLentos;
 	}
 
-	public void setdadoRapido(int dadoRapido) {
+	public void setDadoRapido(int dadoRapido) {
 		this.dadoRapido = dadoRapido;
 	}
 
@@ -48,8 +48,8 @@ public class Inventario {
 		this.bolasNieve = bolasNieve;
 	}
 
-	public void mostrarInventario(Pingüino jugadorMain, int dadoRapido, int dadoLentos, int peces, int bolasNieve) {
-		
+	public void mostrarInventario(Pingüino jugadorMain) {
+
 		System.out.println("Este es tu inventario " + jugadorMain.toString() + ": ");
 		System.out.println("1-Dados rapidos: " + dadoRapido);
 		System.out.println("2-Dados lentos: " + dadoLentos);
