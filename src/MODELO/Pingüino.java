@@ -12,6 +12,10 @@ public class Pingüino {
 		this.color = color;
 	}
 	
+	public String toString() {
+		return nombre;
+	}
+	
 	public void setColor(String color) {
 		this.color = color;
 	}

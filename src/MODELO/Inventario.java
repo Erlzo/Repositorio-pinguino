@@ -4,11 +4,11 @@ import java.util.Scanner;
 
 public class Inventario {
 	Scanner scanner = new Scanner(System.in);
-	int dadoRapido = 1;
-	int dadoLentos = 1;
-	int peces = 1;
-	int bolasNieve = 2;
-
+	int dadoRapido;
+	int dadoLentos;
+	int peces;
+	int bolasNieve;
+	
 	public Inventario(int dadoRapido, int dadoLentos, int peces, int bolasNieve) {
 		this.dadoRapido = dadoRapido;
 		this.dadoLentos = dadoLentos;
@@ -48,13 +48,13 @@ public class Inventario {
 		this.bolasNieve = bolasNieve;
 	}
 
-	public void mostrarInventario(String jugador, int dadoRapido, int dadoLentos, int peces, int bolasNieve) {
-
-		System.out.println("Este es tu inventario: ");
-		System.out.println("1-Dados rapidos: " + this.dadoRapido);
-		System.out.println("2-Dados lentos: " + this.dadoLentos);
-		System.out.println("3-Peces: " + this.peces);
-		System.out.println("4-Bolas de nieve: " + this.bolasNieve);
+	public void mostrarInventario(Pingüino jugadorMain, int dadoRapido, int dadoLentos, int peces, int bolasNieve) {
+		
+		System.out.println("Este es tu inventario " + jugadorMain.toString() + ": ");
+		System.out.println("1-Dados rapidos: " + dadoRapido);
+		System.out.println("2-Dados lentos: " + dadoLentos);
+		System.out.println("3-Peces: " + peces);
+		System.out.println("4-Bolas de nieve: " + bolasNieve);
 
 	}
 
