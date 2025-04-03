@@ -10,10 +10,10 @@ import java.util.Random;
 
 public class main {
 	
-	public static int dadoRapido;
-	public static int dadoLentos;
-	public static int peces;
-	public static int bolasNieve;
+	public static int dadoRapido = 1;
+	public static int dadoLentos = 1;
+	public static int peces = 1;
+	public static int bolasNieve = 2;
 	public static String nombre;
 	public static String color;
 	public static int id = 1;
@@ -44,20 +44,19 @@ public class main {
 			System.out.println("1 - Avanzar casilla");
 			System.out.println("2 - Ver inventario");
 			System.out.println("3 - Guardar/Cargar partida");
+			System.out.println("4 - Reglas del juego");
 			int opcion = scanner.nextInt();
-			
-			System.out.println("Este es el tablero");
-			tablero.tablero();
 			
 			switch (opcion) {
 			case 1:
 				
-				
+				System.out.println("Este es el tablero");
+				tablero.tablero();
 				
 				break;
 			case 2:
 				
-				inventario.mostrarInventario();
+				inventario.mostrarInventario(fichaJugador, dadoRapido, dadoLentos, peces, bolasNieve);
 				
 				break;
 			case 3:
@@ -65,7 +64,11 @@ public class main {
 				
 				
 				break;
+			case 4:
 				
+				
+				
+				break;
 			default:
 				
 				System.out.println("Error: Opción no disponible, intentalo otra vez.");
