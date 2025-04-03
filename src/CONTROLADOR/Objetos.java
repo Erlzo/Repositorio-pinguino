@@ -14,6 +14,12 @@ public class Objetos {
 		this.dadoRapido = dadoRapido;
 		this.dadoLento = dadoLento;
 		
+		
+		
+		
+		
+		
+		
 	}
 	
 	public void setPez(int pez) {
