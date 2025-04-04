@@ -1,6 +1,7 @@
 package MODELO;
 
 import CONTROLADOR.Eventos;
+import MODELO.MoverFicha;
 
 public class Tablero {
 
@@ -8,13 +9,14 @@ public class Tablero {
 	public static String agujeroHielo = "🌀";
 	public static String trineo = "🛷";
 	public static String eventoAleatorio = "?";
-
+	
+	public MoverFicha moverFicha;
+	
 	String[][] tablero = { { trineo, "|41|", "|42|", agujeroHielo, "|44|", eventoAleatorio, "|46|", oso, "|48|", "🏁" },
 			{ "|39|", "|38|", eventoAleatorio, "|36|", "|35|", oso, "|33|", "|32|", agujeroHielo, eventoAleatorio },
 			{ "|20|", "|21|", eventoAleatorio, agujeroHielo, "|24|", "|25|", trineo, "|27|", oso, "|29|" },
 			{ "|19|", trineo, eventoAleatorio, "|16|", "|15|", "|14|", eventoAleatorio, "|12|", "|11|", "|10|" },
 			{ "🚩", "|1|", "|2|", agujeroHielo, "|4|", "|5|", "|6|", trineo, eventoAleatorio, "|9|" } };
-
 
 	public void tablero() {
 
@@ -31,6 +33,21 @@ public class Tablero {
 	public void posTablero(int fila, int columna) {
 
 		System.out.println(tablero[fila][columna]);
+
+		String posi = tablero[fila][columna];
+		
+		if (posi.equals(oso)) {
+			
+			moverFicha.setFila(4);
+			moverFicha.setColumna(0);
+			
+		} else if (tablero[fila][columna].equals(agujeroHielo)) {
+
+		} else if (tablero[fila][columna].equals(trineo)) {
+
+		} else if (tablero[fila][columna].equals(eventoAleatorio)) {
+
+		}
 
 	}
 

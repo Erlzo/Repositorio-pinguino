@@ -1,6 +1,5 @@
 package MODELO;
 
-import MODELO.Dados;
 import MODELO.Tablero;
 
 public class MoverFicha {
@@ -17,7 +16,39 @@ public class MoverFicha {
         this.columna = 0;
     }
 
-    // Mover la ficha de derecha a izquierda y subir de fila
+    public int getFila() {
+		return fila;
+	}
+
+	public void setFila(int fila) {
+		this.fila = fila;
+	}
+
+	public int getColumna() {
+		return columna;
+	}
+
+	public void setColumna(int columna) {
+		this.columna = columna;
+	}
+
+	public int getMaxFilas() {
+		return maxFilas;
+	}
+
+	public void setMaxFilas(int maxFilas) {
+		this.maxFilas = maxFilas;
+	}
+
+	public int getMaxColumnas() {
+		return maxColumnas;
+	}
+
+	public void setMaxColumnas(int maxColumnas) {
+		this.maxColumnas = maxColumnas;
+	}
+
+	// Mover la ficha de derecha a izquierda y subir de fila
     public void movimientoFicha(int posicionDado) {
         for (int i = 0; i < posicionDado; i++) {  // Mover solo la cantidad de posiciones del dado
             
@@ -39,11 +70,12 @@ public class MoverFicha {
             }
 
             // Detener el movimiento si llegamos a la primera fila
-            if (fila <= 0) {
+            if (fila == 9 && columna ==0) {
                 System.out.println("La ficha ha llegado al final del tablero.");
                 break;
             }
         }
+        
         mostrarPosicion();
 
     }
