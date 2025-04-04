@@ -4,6 +4,7 @@ import java.util.Random;
 import MODELO.Inventario;
 
 public class Eventos {
+	
 	// Obt = obtener
 	public static Random random = new Random();
 	public Inventario inventario; // Acceso al inventario
@@ -13,7 +14,7 @@ public class Eventos {
 	}
 
 	int obtPez;
-	int obtBolaNieve; // entre 1-3
+	int obtBolaNieve; 
 	int obtDadoRapido;
 	int obtDadoLento;
 
@@ -59,9 +60,18 @@ public class Eventos {
 	public void obtenerEventoAleatorio() {
 
 		int evento = random.nextInt(4);
+		
+		int [] opciones = {	0,0,0,0,0,		//cada posición representa un 5% de probabilidad
+							1,1,1,1,1,
+							2,2,2,
+							3,3,3,3,3,3,3};
+		
+		int indice = random.nextInt(opciones.length);
+		int numFinal = opciones[indice];
 
 		switch (evento) {
 		case 0:
+			
 			System.out.println("Has conseguido 1 pez ");
 			inventario.setPeces(inventario.getPeces() + 1);
 			break;
@@ -82,10 +92,13 @@ public class Eventos {
 			inventario.setDadoRapido(inventario.getDadoRapido() + 1);
 			break;
 		case 3:
+			
 			System.out.println("Has conseguido 1 dado lento  ");
 			inventario.setDadoLentos(inventario.getDadoLentos() + 1);
 			break;
 		}
+	
 	}
+	
 
 }
