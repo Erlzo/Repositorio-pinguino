@@ -49,7 +49,6 @@ public class Inventario {
 	}
 
 	public void mostrarInventario(Pingüino jugadorMain) {
-
 		System.out.println("Este es tu inventario " + jugadorMain.toString() + ": ");
 		System.out.println("1-Dados rapidos: " + dadoRapido);
 		System.out.println("2-Dados lentos: " + dadoLentos);
@@ -58,16 +57,24 @@ public class Inventario {
 
 	}
 
-	public int eleccionInventario(String jugador, int dadoRapido, int dadoLentos) {
+	public void comprobarInventario(Pingüino jugadorMain) {
+		boolean controlador = true;
+		while (controlador) {
+			if (dadoRapido + dadoLentos >3) {
+				controlador = false;
+				System.out.println("Has alcanzado el limite de dados (Max:3)");
+			}
 
-		System.out.println("Este es tu inventario: ");
-		System.out.println("1-Dado normal");
-		System.out.println("2-Dados rapidos: " + this.dadoRapido);
-		System.out.println("3-Dados lentos: " + this.dadoLentos);
-		System.out.println("4-Atras");
-		System.out.println("Que quieres hacer? ");
-		int eleccion = scanner.nextInt();
-		return eleccion;
+			if (peces > 2) {
+				controlador = false;
+				System.out.println("Has alcanzado el limite de peces (Max:2)");
+			}
+			if (bolasNieve > 6) {
+				controlador = false;
+				System.out.println("Has alcanzado el limite de bolasNieve (Max:6)");
+
+			}
+		}
 
 	}
 
