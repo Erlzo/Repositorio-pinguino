@@ -82,8 +82,14 @@ public class MoverFicha {
 
     // Mostrar la posición actual de la ficha
     public void mostrarPosicion() {
+    																																																																					
+        int[] posiciones = tablero.posTablero(fila,columna);	
+        fila = posiciones[0];
+        columna = posiciones[1];
+        
         System.out.println("Ficha en fila: " + fila + ", columna: " + columna);
-        tablero.posTablero(fila,columna);
+
+        
     }
 
 }

@@ -71,7 +71,7 @@ public class main {
 				
 				moverFicha.movimientoFicha(posicion);
 				
-				eventos.obtenerEventoAleatorio();
+				eventos.obtenerEventoAleatorio(); // SOLO PARA PRUEBA - QUITAR DEL CODIGO FINAL
 				
 				break;
 			case 2:
