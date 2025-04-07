@@ -9,9 +9,9 @@ public class Tablero {
 	public static String agujeroHielo = "🌀";
 	public static String trineo = "🛷";
 	public static String eventoAleatorio = "?";
-	
+
 	public MoverFicha moverFicha;
-	
+
 	String[][] tablero = { { trineo, "|41|", "|42|", agujeroHielo, "|44|", eventoAleatorio, "|46|", oso, "|48|", "🏁" },
 			{ "|39|", "|38|", eventoAleatorio, "|36|", "|35|", oso, "|33|", "|32|", agujeroHielo, eventoAleatorio },
 			{ "|20|", "|21|", eventoAleatorio, agujeroHielo, "|24|", "|25|", trineo, "|27|", oso, "|29|" },
@@ -30,24 +30,49 @@ public class Tablero {
 
 	}
 
-	public void posTablero(int fila, int columna) {
+	public int[] posTablero(int fila, int columna) {
 
 		System.out.println(tablero[fila][columna]);
 
 		String posi = tablero[fila][columna];
-		
+
 		if (posi.equals(oso)) {
-			
-			moverFicha.setFila(4);
-			moverFicha.setColumna(0);
-			
-		} else if (tablero[fila][columna].equals(agujeroHielo)) {
 
-		} else if (tablero[fila][columna].equals(trineo)) {
+			fila = 4;
+			columna = 0;
+		}
 
-		} else if (tablero[fila][columna].equals(eventoAleatorio)) {
+		if (posi.equals(agujeroHielo)) {
+
+			for (int i = 0; i < tablero.length; i++) {
+				System.out.println(tablero[i]);
+			}
+
+			fila = 4;
+			columna = 0;
 
 		}
+
+		if (posi.equals(trineo)) {
+
+			fila = 4;
+			columna = 0;
+		}
+
+		return new int[] { fila, columna };
+
+	}
+
+	public int[] posTableroEvento(int fila, int columna) {
+
+		String posi = tablero[fila][columna];
+
+		if (posi.equals(eventoAleatorio)) {
+
+			fila = 4;
+			columna = 0;
+		}
+		return new int[] { fila, columna };
 
 	}
 
