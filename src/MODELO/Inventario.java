@@ -57,25 +57,4 @@ public class Inventario {
 
 	}
 
-	public void comprobarInventario(Pingüino jugadorMain) {
-		boolean controlador = true;
-		while (controlador) {
-			if (dadoRapido + dadoLentos >3) {
-				controlador = false;
-				System.out.println("Has alcanzado el limite de dados (Max:3)");
-			}
-
-			if (peces > 2) {
-				controlador = false;
-				System.out.println("Has alcanzado el limite de peces (Max:2)");
-			}
-			if (bolasNieve > 6) {
-				controlador = false;
-				System.out.println("Has alcanzado el limite de bolasNieve (Max:6)");
-
-			}
-		}
-
-	}
-
 }
